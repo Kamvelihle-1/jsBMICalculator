@@ -6,7 +6,7 @@ let bmi=0;
 document.querySelector('#Calc').addEventListener('click',()=>{
     
     
-    if (validator(w,h)) {
+    if (validatorW(w)&&validatorH(h)) {
         bmi=eval(w.value/Math.pow(h.value/100,2)).toFixed(2)
         bmiCalc(); 
         console.log(bmi);
@@ -37,17 +37,55 @@ function bmiCalc(){
     }
 }
 
-function validator(x,y) {
-    if (isNaN(x.value) || x.value.length==0 ){
-        alert("Please enter a number for your weight and height")
-        clear();
-        return false;
-    } else if ( isNaN(y.value)|| y.value.length ==0 ){
-        alert("Please enter a number for your weight and height")
-        clear();
-        return false;
-    }else{
-        return true;
+function validatorW(x) {
+  
+        switch (true) {
+            case x.value.length ==0 :
+                alert("Please enter a number for your weight and height")
+                clear();
+                return false;
+                break;
+            case x.value.length >0 :
+                switch (true) {
+                    case isNaN(x.value):
+                        alert("Please enter a number for your weight and height")
+                        clear();
+                        return false;
+                        break;
+                
+                    default:
+                        return true
+                        break;
+                }
+           
+            
+        }
+
+}
+function validatorH(y) {
+  switch (true) {
+   
+        case y.value.length ==0 :
+            alert("Please enter a number for your weight and height")
+            clear();
+            return false;
+            break;
+        case y.value.length >0 :
+            switch (true) {
+                case isNaN(y.value):
+                    alert("Please enter a number for your weight and height")
+                    clear();
+                    return false;
+                    break;
+            
+                default:
+                    return true
+                    break;
+            }
+            
+            console.log("true");
+            break;
+       
     }
 
 }
