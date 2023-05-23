@@ -6,7 +6,7 @@ let bmi=0;
 document.querySelector('#Calc').addEventListener('click',()=>{
     
     
-    if (validatorW(w)&&validatorH(h)) {
+    if (validatorW()&&validatorH()) {
         bmi=eval(w.value/Math.pow(h.value/100,2)).toFixed(2)
         bmiCalc(); 
         console.log(bmi);
@@ -37,17 +37,17 @@ function bmiCalc(){
     }
 }
 
-function validatorW(x) {
+function validatorW() {
   
         switch (true) {
-            case x.value.length ==0 :
+            case w.value.length ==0 :
                 alert("Please enter a number for your weight and height")
                 clear();
                 return false;
                 break;
-            case x.value.length >0 :
+            case w.value.length >0 :
                 switch (true) {
-                    case isNaN(x.value):
+                    case isNaN(w.value):
                         alert("Please enter a number for your weight and height")
                         clear();
                         return false;
@@ -62,17 +62,17 @@ function validatorW(x) {
         }
 
 }
-function validatorH(y) {
+function validatorH() {
   switch (true) {
    
-        case y.value.length ==0 :
+        case h.value.length ==0 :
             alert("Please enter a number for your weight and height")
             clear();
             return false;
             break;
-        case y.value.length >0 :
+        case h.value.length >0 :
             switch (true) {
-                case isNaN(y.value):
+                case isNaN(h.value):
                     alert("Please enter a number for your weight and height")
                     clear();
                     return false;
