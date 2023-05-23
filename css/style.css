@@ -1,0 +1,24 @@
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: inherit;
+    display: flex;
+    justify-content: center;
+  
+}
+.calculator{
+    background-color: rgb(168, 237, 214);
+    min-width: 250px;
+    display: flexbox;
+    border-radius: .5rem;
+    justify-content: center;
+    margin-top: 15rem;
+}
+.calculator button{
+    width: 75%;
+}
